@@ -1,0 +1,16 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TestPorgram.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Main.c
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(35,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(94,7): warning C4101: 'myoutput': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(124,19): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(180,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(233,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(230,22): warning C4101: 'draw_a_card': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(229,9): warning C4101: 'total_card_value': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(228,6): warning C4101: 'playing': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(230,35): warning C4101: 'play_again': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(229,6): warning C4101: 's': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(228,15): warning C4101: 'program_run': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(230,7): warning C4101: 'deal_two_card': unreferenced local variable
+C:\Users\Chatchai\Desktop\Practice C\TestCProgram\TestPorgram\Main.c(27): warning C4716: 'lab6_q_one_one': must return a value
+  TestPorgram.vcxproj -> C:\Users\Chatchai\Desktop\Practice C\TestCProgram\Debug\TestProgram.exe
