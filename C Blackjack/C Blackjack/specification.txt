@@ -1,0 +1,56 @@
+Functions required:
+- Find value of a card
+- Finding the value of the hand
+- End of round routine 
+	- Clear the dealer hand
+	- Clear the player hand
+	- Clear the player bets
+- Input validation for integer (For the bet)
+- Input validation for char (For playing decision)
+- Hiding dealer card
+- Checking for sufficient money
+- Generate a random card and hit card to hand
+	- Generate card
+	- Appending it to the hand
+- Check for blackjack in hand
+- Check for allowed to double down
+- Double down routine
+
+Concerned moving parts/variable:
+- Constants
+	- MAXCARDS
+	- TRUE
+	- FALSE
+
+- Dealer
+	- Minimal bet
+	- House payout
+		- Blackjack rate
+		- Winning rate
+		- Push rate
+	- Hand (which holds cards)
+		- Value
+		- State
+			- Playing
+			- Busted
+			- Over
+
+- Player
+	- Money
+	- Current bet
+	- Hand (which hold cards)
+		- Value
+		- State
+			- Playing
+			- Busted
+			- Over
+
+- Cards
+	- Name
+	- Suit
+
+
+
+
+
+

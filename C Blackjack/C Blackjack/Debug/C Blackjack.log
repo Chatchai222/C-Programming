@@ -1,0 +1,8 @@
+﻿  main.c
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(27,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(101,31): warning C4047: '==': 'char [5]' differs in levels of indirection from 'int'
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(226,7): warning C4101: 'player_input': unreferenced local variable
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(228,7): warning C4101: 'playing_decision': unreferenced local variable
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(225,6): warning C4101: 'index': unreferenced local variable
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(225,13): warning C4101: 'j': unreferenced local variable
+  C Blackjack.vcxproj -> C:\Users\Chatchai\source\repos\C Blackjack\Debug\C Blackjack.exe
