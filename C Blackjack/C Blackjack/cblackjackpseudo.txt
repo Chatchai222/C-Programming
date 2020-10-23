@@ -1,0 +1,126 @@
+# Some notes concerning the game
+# Blackjack(naturals) trumps 21 Ex: 6 + 7 + 8 loses to Ace + 10
+# Dealer must keep dealing til he is 17 or above
+
+## Functions for the blackjack game ##
+def check_if_above_21:
+    Look at the hand
+    Do a soft value of the hand
+    If the total value is already above 21 bust the hand
+    For each card in hand
+        If it is an ace and soft count is <11
+            Add 10 to the total
+    Return the final count
+
+def generate_card():
+    card_name = [A,2,3,4,5,6,7,8,9,10,J,Q,K]
+    card_suit = [C, H, D, S]
+    Pick a random card name
+    Pick a random card suit
+    Return card_name + card suit
+
+## Pregame set up ##
+If the player has lower money than the minimal bet(10$):
+    Tell the player they are broke and shoo them off
+
+Player walks up to the table
+Player will put down some amount of bet
+    If the player didn't give a number the dealer will keep asking 
+    IF the player gives a negative bet, the dealer will keep asking
+    If the player says a number bigger than what he has, the dealer will keep asking for a valid bet
+Take away that amount of bet from the player
+Dealer will deal 2 cards faceup to the player
+Dealer will deal 1 faceup card and 1 facedown card to himself
+
+## Check for blackjacks ##
+If the player has blackjack:
+    Dealer will reveal his card
+    If the dealer DON't have blackjack
+        Tell the player he got a blackjack
+        Pay the player according to (His bet * House rate for blackjack)
+        Clear the card from the player hand
+        Clear the card from the dealer hand
+        Clear the current bet of the player 
+        END OF ROUND
+    Else
+        Tell the player the bets are pushed
+        Pay the player according to (His bet) (Since it is a pushed hand)
+        Clear the cards from the dealer
+        Clear the cards from the player
+        Clear the current bet of the player
+        END OF ROUND
+
+If the dealer has a face up card with a value of 10 or Ace:
+    The dealer check if they have blackjack
+    If the dealer has blackjack:
+        Dealer reveals his cards
+        Tell the player he is unlucky and the dealer has blackjack
+        Clear the cards from the dealer
+        Clear the cards from the player
+        Clear the current bet of the player
+        END OF ROUND
+    
+
+## Player main playing decision ##
+    ## Checking for bust and ending of hand ##
+While the player hand is not busted or over
+    Ask the player what they want to do
+    If they give an invalid response
+        Clear the response
+        Ask the player the give a new response
+        Continue
+
+    If the player choose to stand his hand:
+        The hand will be "over"
+
+    If the player choose to hit:
+        The dealer will add one more card to the hand
+
+    If the player choose to double down:
+        If the hand is allowed to be doubled down:  # Only having 2 cards
+            Ask the player how much they want to add
+            The player will add up to an equal amount of money to the initial bet on the hand
+            The dealer will hit one more card to the hand
+            The hand is over
+        Else:
+            Tell the player they can't double down
+        
+    If busted(hand):
+        Tell player the value of his hand
+        Tell player he is busted
+        Make the player hand state busted
+        Clear the player cards
+        Clear the dealer cards 
+        Clear his current bet
+        Continue
+
+
+If player hand is busted
+    END OF ROUND
+
+
+### The dealer playing of hands ###
+
+    
+
+The dealer will reveal his hidden card
+While his hand is not satisfied by the house condition and not busted:  # Keep hitting till hard/soft 17 or 16
+    Dealer will hit new card to his hand
+    If busted(dealer hand):
+        The dealer hand state is busted
+        Break
+
+
+If the dealer bust:
+    Tell player the dealer bust
+    Tell player the wins
+    Dealer pays the player (His bet * 2)
+    END OF ROUND
+Else:
+    If the dealer hand is closer to 21 than the player hand:
+        The dealer will payout that hand according to a house rate (Bet * win rate)
+    If the dealer hand is the same as the player hand:
+        The bets are pushed
+    If the dealer hand is farther away from 21 than the player hand:
+        The player loses his hands bet
+END OF ROUND

@@ -23,14 +23,9 @@
     <Text Include="specification.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="..\..\..\..\Desktop\Blackjack\pseudocode.txt">
+    <Text Include="cblackjackpseudo.txt">
       <Filter>Source Files</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\Desktop\C flowchart.pdf">
-      <Filter>Source Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\C flowchart.png">

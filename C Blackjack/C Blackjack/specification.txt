@@ -1,3 +1,7 @@
+### Program Specification ### 
+The program is supposed to partly replicate the game of blackjack, which is played in a casino
+Each component of the game has broken down into the functions below
+
 Functions required:
 - Find value of a card
 - Finding the value of the hand
@@ -18,7 +22,8 @@ Functions required:
 
 Concerned moving parts/variable:
 - Constants
-	- MAXCARDS
+	- MAX_CARD
+	- MAX_HAND
 	- TRUE
 	- FALSE
 
