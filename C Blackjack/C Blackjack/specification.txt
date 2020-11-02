@@ -2,40 +2,44 @@
 The program is supposed to partly replicate the game of blackjack, which is played in a casino
 Each component of the game has broken down into the functions below
 
-Functions required:
+### Functions required ###
 - Find value of a card
 - Finding the value of the hand
-- End of round routine 
+- Pre-round routine 
 	- Clear the dealer hand
 	- Clear the player hand
 	- Clear the player bets
-- Input validation for integer (For the bet)
-- Input validation for char (For playing decision)
-- Hiding dealer card
+	- Set player hand state to be playing
+- Input validation for the bet
+- Input validation for the playing decision
+- Input validation for choosing whether to keep playing
+- Displaying hands (with option for hidden card)
 - Checking for sufficient money
 - Generate a random card and hit card to hand
 	- Generate card
 	- Appending it to the hand
 - Check for blackjack in hand
-- Check for allowed to double down
-- Double down routine
+- Check for busted hand
+- Check if player is allowed to double down
 
-Concerned moving parts/variable:
+
+### Concerned moving parts/variable ###
 - Constants
-	- MAX_CARD
-	- MAX_HAND
-	- TRUE
-	- FALSE
+	- MINIMUM_BET 10
+	- MAX_INPUT 255
+	- MAX_CARD 5
+	- MAX_HAND 25
+	- TRUE 1
+	- FALSE 0
 
 - Dealer
-	- Minimal bet
 	- House payout
-		- Blackjack rate
+		- Blackjack rate 
 		- Winning rate
 		- Push rate
 	- Hand (which holds cards)
 		- Value
-		- State
+		- State 
 			- Playing
 			- Busted
 			- Over
@@ -54,8 +58,107 @@ Concerned moving parts/variable:
 	- Name
 	- Suit
 
+### Explanation for how the (longer) functions work ###
+def deal_card(hand):
+	Pick a random suit (C, H, D, S)
+	Pick a random name (A,2,3..,10,J,Q,K)
+	Generated card = Random name + Random suit
+	Append the generated card into the hand
+
+def get_card_value(card):
+	Look at the name of the card
+	If the name is a alphabet:
+		If it is 'A':
+			Return 1
+		Else:
+			Return 10
+
+	If the name is a number:
+		Return that number
+
+def get_hand_value(hand):
+	output = 0
+	for cards in hand:
+		output += get_card_value(card)
+	# Note we just found the "soft value" of the hand (Ace is considered 1)
+
+	for card in hand:
+		If the card is an ace and output is <= 11:
+			output += 10
+	# Now the output is the "true value" of the hand (Ace can be 1 or 11)
+
+	Return output
+
+def display_hand(hand, hidden):
+	If hidden:
+		Display the first card in the hand as XX
+		Display the second card in the hand normally
+		Display the value of second card
+	Else:
+		Display all the card in the hand
+		Display the value of the hand
+
+def get_bet_from_player():
+	valid_input = False
+	While input is not valid:
+		input = Ask player for input string (Bet)
+
+		If the player didn't give any input:
+			Tell player, to input a bet
+			valid_input = False
+			continue
+
+		If the player input is not all numeric:
+			Tell player, input has to positive integer
+			valid_input = False
+			continue
+
+		If the player input is less than the minimum bet:
+			Tell player, the bet is lower than minumum bet unit
+			valid_input = False
+			continue
+
+		If the player input is not a multiple of minimum bet:
+			Tell player, the bet unit is not a multiple bet unit
+			valid_input = False
+			continue
+
+		valid_input = True
+
+	return input
+
+def get_playing_decision_from_player():
+	Ask player for playing decision
+	Keep asking the player for a playing decision:
+		If playing decision is not given ("")
+		If there is more than one playing decision
+		If the playing decision is not 'H' or 'S' or 'D'
+
+	Return playing decision
+
+def ask_player_keep_playing():
+	Ask player if they want to keep playing
+	Keep asking the player:
+		If playing decision is not given ("")
+		If there is more than one playing decision
+		If the playing decision is not 'Y' or 'N'
+
+	Return the decision
+
+		
 
 
 
 
+			
+			
+			
+		
+
+
+
+
+	
+
+		
 

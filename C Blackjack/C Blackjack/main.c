@@ -5,13 +5,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <Windows.h>
+#include <mmsystem.h>
+
 #define TRUE 1
 #define FALSE 0
 #define MAX_HAND 25
 #define MAX_CARD 5
 #define MAX_INPUT 255
 #define MINIMUM_BET 10
-
 
 int is_same(char str1[], char str2[]) {
 	// Check if two string are the same
@@ -53,7 +55,7 @@ void deal_card(char hand[MAX_HAND][MAX_CARD]) {
 }
 
 int get_card_value(char card[]) {
-	// For Ace,Jack,Queen,King
+	// For Ace, Jack, Queen, King
 	if (isalpha(card[0])){ 
 		switch (card[0])
 		{
@@ -71,16 +73,17 @@ int get_card_value(char card[]) {
 		return atoi(card);
 	}
 
-	return 666;
+	return -10;
 }
 
+// TODO Flowchart
 int get_hand_value(char hand[][MAX_CARD]) {
 	int index;
 	int output_value = 0;
 
 	// Do an initial "soft value", where Ace is valued at 1
 	for (index = 0; index < MAX_HAND;) {
-		if (is_same(hand[index], "0")) {
+		if (is_same(hand[index], "0")) { // This signify end of the card in the hand
 			break;
 		}
 		else {
@@ -112,6 +115,7 @@ void display_hand(char hand[][MAX_CARD], int first_card_face_down) {
 		continue;
 		}
 		if (is_same(hand[index], "0")) {
+			// This print the (hand value) when reach end of card in hand
 			if (first_card_face_down) {
 				printf("(%d) %\n", get_card_value(hand[1]));
 			}
@@ -121,6 +125,7 @@ void display_hand(char hand[][MAX_CARD], int first_card_face_down) {
 			break;
 		}
 		else {
+			// This print the card 
 			printf("%s ", hand[index]);
 		}
 	}
@@ -314,14 +319,14 @@ int main(){
 	printf("\n");
 	
 	// The main part of the game
-	int game_on = TRUE;
+	char game_on = 'Y';
 	char round_on = 'Y';
 	srand(time(NULL));
-	while (game_on) {
+	while (game_on == 'Y') {
 
 		// Check for minimum bet
 		if (player_money < MINIMUM_BET) {
-			printf("You are broke, get out!\n");
+			printf("You are broke, you only have %d$. Get out!\n", player_money);
 			break;
 		}
 		
@@ -332,7 +337,7 @@ int main(){
 			clear_hand(dealer_hand);
 			clear_hand(player_hand);
 			player_bet = 0;
-			player_hand_state = 'P'; // p means playing
+			player_hand_state = 'P'; // P means playing
 			printf("You have %d$ to play\n", player_money);
 
 			// Betting part
@@ -443,10 +448,13 @@ int main(){
 			
 			// Dealer forced to deal to 17 or above
 			while (get_hand_value(dealer_hand) < 17) {
-				printf("Dealer deals a card\n");
-				printf("Dealer revealed hand is: ");
+				printf("\nDealer deals a card\n");
 				deal_card(dealer_hand);
+
+				printf("Dealer hand is: \n");
 				display_hand(dealer_hand, FALSE);
+				printf("Your hand is: \n");
+				display_hand(player_hand, FALSE);
 			}
 
 			// If dealer busted the round is over, player wins automatically
@@ -465,24 +473,22 @@ int main(){
 				break;
 			} 
 
-			// Player wins 
+			// Player wins (Player hand is closer to 21 than dealer)
 			if (get_hand_value(player_hand) > get_hand_value(dealer_hand)) {
 				printf("Your hand is closer to 21 than dealer's hand\n");
 				printf("You win!\n");
 				player_money += player_bet * dealer_rates[1];
 				break;
 			}
-			else { // Player loses
+			else { // Player loses (Dealer hand is close to 21 than player)
 				printf("Dealer hand is closer to 21 than your hand\n");
 				printf("You lose!\n");
 				break;
 			}
 			
-
 		} // END OF ROUND
-
-		// Ask if the playing want to keep playing
-		round_on = ask_player_keep_playing();
+		// Ask if the player want to keep playing
+		game_on = ask_player_keep_playing();
 	}
 
 	return 0;

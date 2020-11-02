@@ -1,23 +1,12 @@
+## This is the pseudocode of the program ##
+# Please note that this may be incomplete of the actual program 
+# This is built off from the specification of the program
+
 # Some notes concerning the game
-# Blackjack(naturals) trumps 21 Ex: 6 + 7 + 8 loses to Ace + 10
-# Dealer must keep dealing til he is 17 or above
+Blackjack(naturals) trumps 21 Ex: 6 + 7 + 8 loses to Ace + 10
+Dealer must keep dealing til he is 17 or above
 
-## Functions for the blackjack game ##
-def check_if_above_21:
-    Look at the hand
-    Do a soft value of the hand
-    If the total value is already above 21 bust the hand
-    For each card in hand
-        If it is an ace and soft count is <11
-            Add 10 to the total
-    Return the final count
 
-def generate_card():
-    card_name = [A,2,3,4,5,6,7,8,9,10,J,Q,K]
-    card_suit = [C, H, D, S]
-    Pick a random card name
-    Pick a random card suit
-    Return card_name + card suit
 
 ## Pregame set up ##
 If the player has lower money than the minimal bet(10$):

@@ -148,6 +148,9 @@
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\C flowchart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\..\Desktop\Games\Neural composer\Songs\music_2.wav" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

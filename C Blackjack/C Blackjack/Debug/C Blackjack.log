@@ -1,12 +1,12 @@
 ﻿  main.c
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(116,12): warning C4778: 'printf' : unterminated format string '%\n'
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(119,12): warning C4778: 'printf' : unterminated format string '%\n'
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(149,7): warning C4013: 'gets' undefined; assuming extern returning int
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(319,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(369,50): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(375,50): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(455,49): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(464,49): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(120,12): warning C4778: 'printf' : unterminated format string '%\n'
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(123,12): warning C4778: 'printf' : unterminated format string '%\n'
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(154,7): warning C4013: 'gets' undefined; assuming extern returning int
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(324,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(374,50): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(380,50): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(463,49): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
 C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(472,49): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(305,7): warning C4101: 'dealer_hand_state': unreferenced local variable
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(480,49): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chatchai\source\repos\C Blackjack\C Blackjack\main.c(310,7): warning C4101: 'dealer_hand_state': unreferenced local variable
   C Blackjack.vcxproj -> C:\Users\Chatchai\source\repos\C Blackjack\Debug\C Blackjack.exe
